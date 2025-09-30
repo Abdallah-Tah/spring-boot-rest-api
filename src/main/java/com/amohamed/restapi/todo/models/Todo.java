@@ -21,41 +21,49 @@ public class Todo {
 
     public Todo(long id, String username, String description, boolean isDone, LocalDate targetDate) {
         this.id = id;
-        this.isDone = isDone; 
+        this.username = username;
+        this.description = description;
+        this.isDone = isDone;
         this.targetDate = targetDate;
     }
 
-    public void setId(lon
-         id) { thi
-    .
+    public long getId() {
+        return id;
+    }
 
-    public String getUser
+    public void setId(long id) {
+        this.id = id;
+    }
 
-    ame() { re
+    public String getUsername() {
+        return username;
+    }
 
-    public void setUsername(Stri
-        g username) {
-    t
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-    public String getDescription(
-         { return descri
-    t
+    public String getDescription() {
+        return description;
+    }
 
-    public void setDescription(String descript
-        on) { this.description = 
-    e
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public boolean isDone() {
         return isDone;
     }
 
-    ;
+    public void setDone(boolean done) {
+        isDone = done;
+    }
 
+    public LocalDate getTargetDate() {
+        return targetDate;
+    }
+
+    public void setTargetDate(LocalDate targetDate) {
+        this.targetDate = targetDate;
+    }
 }
-
-Date() { retur
-
-
-
-    targetDate) { 
-    h

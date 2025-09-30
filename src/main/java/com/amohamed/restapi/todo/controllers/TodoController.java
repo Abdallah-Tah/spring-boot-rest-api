@@ -5,6 +5,7 @@ import com.amohamed.restapi.todo.models.Todo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/api/todos")
@@ -14,9 +15,19 @@ public class TodoController {
     private static List<Todo> todos = new ArrayList<>();
 
     static {
-        todos.add(new Todo(++idCounter, "amohamed", "Learn Spring Boot", false, "2023-12-31"));
-        todos.add(new Todo(++idCounter, "amohamed", "Build REST API", false, "2024-01-15"));
-        todos.add(new Todo(++idCounter, "amohamed", "Deploy Application", false, "2024-02-01"));
+        todos.add(createTodo("Learn Spring Boot", "2023-12-31"));
+        todos.add(createTodo("Build REST API", "2024-01-15"));
+        todos.add(createTodo("Deploy Application", "2024-02-01"));
+    }
+
+    private static Todo createTodo(String description, String targetDate) {
+        Todo todo = new Todo();
+        todo.setId(++idCounter);
+        todo.setUsername("amohamed");
+        todo.setDescription(description);
+        todo.setDone(false);
+        todo.setTargetDate(LocalDate.parse(targetDate));
+        return todo;
     }
 
     // GET /api/todos
